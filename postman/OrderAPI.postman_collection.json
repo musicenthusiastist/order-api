@@ -1,0 +1,383 @@
+{
+  "info": {
+    "_postman_id": "91227051-e3a1-4865-8f83-185b959cd0c5",
+    "name": "My Collection",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53580244",
+    "_collection_link": "https://go.postman.co/collection/53580244-91227051-e3a1-4865-8f83-185b959cd0c5?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get data",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "postman-echo.com/get",
+          "host": [
+            "postman-echo",
+            "com"
+          ],
+          "path": [
+            "get"
+          ]
+        },
+        "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+      },
+      "response": [
+        {
+          "name": "Get data",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"customerName\": \"Alice Johnson\",\r\n  \"product\": \"Wireless Mouse\",\r\n  \"quantity\": 2,\r\n  \"totalPrice\": 49.99\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "250"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"fa-Z3m1jh8Nz81hiljAREMEinjBFMw\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 29 Mar 2026 02:41:17 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Order created successfully.\",\n    \"payment\": \"Payment processed successfully.\",\n    \"order\": {\n        \"id\": 1,\n        \"customerName\": \"Alice Johnson\",\n        \"product\": \"Wireless Mouse\",\n        \"quantity\": 2,\n        \"totalPrice\": 49.99,\n        \"status\": \"Pending\",\n        \"createdAt\": \"2026-03-29T02:41:17.455Z\"\n    }\n}"
+        },
+        {
+          "name": "Get data",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "158"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"9e-vaFJADImLIGRNJ3CqHyef3p6yik\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 29 Mar 2026 02:44:31 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 1,\n        \"customerName\": \"Alice Johnson\",\n        \"product\": \"Wireless Mouse\",\n        \"quantity\": 2,\n        \"totalPrice\": 49.99,\n        \"status\": \"Pending\",\n        \"createdAt\": \"2026-03-29T02:41:17.455Z\"\n    }\n]"
+        },
+        {
+          "name": "Get data",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "158"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"9e-vaFJADImLIGRNJ3CqHyef3p6yik\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 29 Mar 2026 02:44:31 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 1,\n        \"customerName\": \"Alice Johnson\",\n        \"product\": \"Wireless Mouse\",\n        \"quantity\": 2,\n        \"totalPrice\": 49.99,\n        \"status\": \"Pending\",\n        \"createdAt\": \"2026-03-29T02:41:17.455Z\"\n    }\n]"
+        },
+        {
+          "name": "Get data",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/orders/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "41"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"29-CuL4mUs/06qbaoAo0bub5SX71RQ\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 29 Mar 2026 02:50:48 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Order deleted successfully.\"\n}"
+        },
+        {
+          "name": "Get data",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/orders/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders",
+                "1"
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "28"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"1c-72jXt2vG4cOX0mkqC9MBkL0lrBc\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 29 Mar 2026 02:52:10 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Order not found.\"\n}"
+        },
+        {
+          "name": "Get data",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"customerName\": \"Bob\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "73"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"49-TRLkGKW0AoB4nU3/Rl5itTCEryQ\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 29 Mar 2026 02:53:29 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"customerName, product, quantity, and totalPrice are required.\"\n}"
+        }
+      ]
+    }
+  ]
+}
