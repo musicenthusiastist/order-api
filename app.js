@@ -67,7 +67,7 @@ function simulatePayment() {
 
 // Root route
 app.get("/", (req, res) => {
-  res.json({ message: "Order Management API is running." });
+  res.json({ message: "Order API updated through GitHub Actions pipeline." });
 });
 
 // POST /orders - Create a new order
