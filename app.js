@@ -67,7 +67,7 @@ function simulatePayment() {
 
 // Root route
 app.get("/", (req, res) => {
-  res.json({ message: "Order Management API is running." });
+  res.json({ message: "Order API updated through GitHub Actions pipeline." });
 });
 
 // POST /orders - Create a new order
@@ -186,10 +186,6 @@ app.delete("/orders/:id", async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-});
-
-app.get("/health", (req, res) => {
-  res.json({ status: "ok" });
 });
 
 // Start server
