@@ -1,4 +1,4 @@
-name: Build and Deploy to GKE
+name: Build and Push Docker Image
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-test-deploy:
+  build-and-push:
     runs-on: ubuntu-latest
 
     steps:
@@ -42,33 +42,3 @@ jobs:
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/order-api:${IMAGE_TAG}
           docker push ${{ secrets.DOCKER_USERNAME }}/order-api:latest
-
-      - name: Authenticate to Google Cloud
-        uses: google-github-actions/auth@v2
-        with:
-          credentials_json: ${{ secrets.GCP_SA_KEY }}
-
-      - name: Set up gcloud
-        uses: google-github-actions/setup-gcloud@v2
-
-      - name: Get GKE credentials
-        run: |
-          gcloud container clusters get-credentials ${{ secrets.GKE_CLUSTER }} \
-            --zone ${{ secrets.GKE_ZONE }} \
-            --project ${{ secrets.GCP_PROJECT_ID }}
-
-      - name: Apply Kubernetes manifests
-        run: |
-          kubectl apply -f deployment.yaml
-          kubectl apply -f service.yaml
-
-      - name: Update image
-        run: |
-          kubectl set image deployment/order-api \
-            order-api=${{ secrets.DOCKER_USERNAME }}/order-api:${IMAGE_TAG}
-
-      - name: Verify rollout
-        run: |
-          kubectl rollout status deployment/order-api
-          kubectl get pods
-          kubectl get services
