@@ -14,5 +14,6 @@ spec:
       containers:
         - name: order-api
           image: xiranzhou/order-api:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
